@@ -1,5 +1,6 @@
 package classes;
 
+
 public abstract class CharacterClass implements BaseClass {
     
     private int healthPoint;
@@ -9,7 +10,7 @@ public abstract class CharacterClass implements BaseClass {
     private String name;
     private int maxHealthPoint;
     private int maxManaPoint;
-
+    private AttackType attackType;
 
 
     @Override
@@ -23,29 +24,24 @@ public abstract class CharacterClass implements BaseClass {
     }
     @Override
     public void info() {
-        // TODO Auto-generated method stub
-        
+        System.out.println("Name: " + this.name + ", HP: " + this.healthPoint + ", Mana: " + this.manaPoint + ", level: " + this.level);
     }
     @Override
-    public void loseHealth() {
-        // TODO Auto-generated method stub
-        
+    public void loseHealth(int amount) {
+        setHealthPoint(this.healthPoint - amount);        
     }
     @Override
-    public void restoreHealth() {
-        // TODO Auto-generated method stub
-        
+    public void restoreHealth(int amount) {
+        setHealthPoint(this.healthPoint + amount);
     }
 
     @Override
-    public void loseMana() {
-        // TODO Auto-generated method stub
-        
+    public void loseMana(int amount) {
+        setManaPoint(this.manaPoint - amount);
     }
     @Override
-    public void restoreMana() {
-        // TODO Auto-generated method stub
-        
+    public void restoreMana(int amount) {
+        setManaPoint(this.manaPoint + amount);                
     }
 
 
@@ -54,6 +50,7 @@ public abstract class CharacterClass implements BaseClass {
         return attackAmount;
     }
     public void setAttackAmount(int attackAmount) {
+        if(attackAmount < 0) System.out.println("We can't damage by this 0!");
         this.attackAmount = attackAmount;
     }
     public int getHealthPoint() {
@@ -97,4 +94,12 @@ public abstract class CharacterClass implements BaseClass {
     public void setName(String name) {
         this.name = name;
     }
+
+    public AttackType getAttackType() {
+        return attackType;
+    }
+    public void setAttackType(AttackType attackType) {
+        this.attackType = attackType;
+    }
+
 }
