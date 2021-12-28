@@ -1,3 +1,4 @@
+package Party;
 import classes.CharacterClass;
 
 public class Party {

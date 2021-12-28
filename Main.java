@@ -1,3 +1,4 @@
+import Party.Party;
 import classes.characters.Archer;
 import classes.characters.Mage;
 import classes.characters.Warior;
