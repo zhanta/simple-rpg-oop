@@ -1,6 +1,6 @@
 package dungeon;
-import Party.Party;
+import party.Party;
 
 public interface BasicDungeon {
-    void open(Party party);
+    boolean open(Party party);
 }
